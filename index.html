@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="robots" content="noindex, nofollow"/>
+<title>BlueStone — Investor Day 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #01060a;
+    --blue: #020b14;
+    --gold: #D5BB8D;
+    --gold-grad: linear-gradient(90deg, #A08155 0%, #E6CDA1 50%, #AE8F5B 100%);
+    --gold-grad-btn: linear-gradient(180deg, #E5C991 0%, #A58552 100%);
+    --text-main: #ffffff;
+    --text-muted: rgba(255,255,255,0.7);
+    --line: rgba(213,187,141,0.25);
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html, body { 
+    background: var(--bg-dark); 
+    color: var(--text-main); 
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 400; 
+    -webkit-font-smoothing: antialiased; 
+  }
+  body { overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ── NAV ── */
+  nav { position:fixed; top:0; left:0; right:0; z-index:40; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; background:rgba(2,11,20,0.9); backdrop-filter:blur(12px); border-bottom:1px solid rgba(255,255,255,0.05); }
+  .brand { display:flex; align-items:center; }
+  .brand-logo { height:22px; width:auto; display:block; filter: brightness(0) invert(1); }
+  nav ul { display:none; list-style:none; }
+  nav ul a { color:var(--text-muted); transition:color .2s; font-size:13px; font-weight:600; text-transform: uppercase; letter-spacing: 1.3px; }
+  nav ul a:hover { color:var(--gold); }
+  .nav-cta { display:none; align-items:center; gap:10px; padding:10px 24px; border:1px solid var(--gold); color:var(--gold); font-size:12px; letter-spacing:1.65px; text-transform:uppercase; font-weight:600; border-radius: 10px; transition:all .25s; }
+  .nav-cta:hover { background:var(--gold); color:var(--bg-dark); }
+  .nav-toggle { display:flex; flex-direction:column; justify-content:center; gap:5px; cursor:pointer; padding:6px 4px; background:none; border:none; }
+  .nav-toggle span { display:block; width:22px; height:2px; background:#fff; transition:transform .3s,opacity .3s; }
+  .nav-toggle.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity:0; }
+  .nav-toggle.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+  /* Mobile menu */
+  .mobile-menu { display:none; flex-direction:column; position:fixed; top:51px; left:0; right:0; z-index:39; background:rgba(2,11,20,0.97); backdrop-filter:blur(12px); border-bottom:1px solid rgba(255,255,255,0.05); padding:8px 20px 20px; }
+  .mobile-menu.open { display:flex; }
+  .mobile-menu a { display:block; padding:13px 0; color:var(--text-muted); font-size:14px; font-weight:600; border-bottom:1px solid rgba(255,255,255,0.05); transition:color .2s; text-transform: uppercase; letter-spacing: 1.3px; }
+  .mobile-menu a:last-child { border-bottom:none; }
+  .mobile-menu a:hover { color:var(--gold); }
+
+  /* ── HERO ── */
+  .hero { 
+    position: relative; 
+    padding: 100px 20px 60px; 
+    overflow: hidden; 
+    background: radial-gradient(83.31% 89.04% at 50% 50%, #081F39 0%, #000B1D 81.25%);
+  }
+  .hero-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .hero-above { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(48px, 10vw, 115px);
+    font-weight: 600;
+    line-height: 0.9;
+    letter-spacing: -1.92px;
+    color: #fff;
+    margin-bottom: 0;
+  }
+  .hero-title .year {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(52px, 11vw, 120px);
+    font-weight: 400;
+    letter-spacing: 6px;
+    background: var(--gold-grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  .hero-tag {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 4vw, 30px);
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .hero-lede {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-bottom: 40px;
+  }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 28px;
+    background: var(--gold-grad-btn);
+    border: 1px solid var(--gold);
+    border-radius: 15px;
+    color: #001E38;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all .25s;
+    text-decoration: none;
+  }
+  .hero-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(213,187,141,0.3);
+  }
+  .hero-cta svg { width: 14px; height: 14px; }
+  .invitation-only {
+    margin-top: 16px;
+    font-size: 12px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    font-weight: 500;
+  }
+  .hero-image {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ── INFO STRIP (Save the Date) ── */
+  .info-strip-wrapper {
+    padding: 40px 20px 80px;
+    background: var(--bg-dark);
+  }
+  .info-strip {
+    max-width: 1250px;
+    margin: 0 auto;
+    background: linear-gradient(185.91deg, #0A1F3C 4.91%, #0B131F 95.56%);
+    border: 1px solid var(--gold);
+    border-radius: 30px;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-items: center;
+  }
+  .info-cell {
+    text-align: center;
+    position: relative;
+  }
+  .info-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 16px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .info-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--gold);
+    fill: none;
+    stroke-width: 1.5;
+  }
+  .info-label {
+    font-size: 11px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .info-value {
+    font-family: 'Cinzel', serif;
+    font-size: 25px;
+    color: #fff;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .info-sub {
+    font-size: 15px;
+    color: #fff;
+    margin-top: 8px;
+    line-height: 1.2;
+  }
+
+  /* ── AGENDA ── */
+  .agenda-section { padding: 40px 20px 80px; background: var(--bg-dark); }
+  .agenda-wrap { max-width: 1250px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 40px; }
+  .panel-title { font-family: 'Cinzel', serif; font-size: 40px; font-weight: 700; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; text-align: center; }
+  .agenda-list { display: flex; flex-direction: column; }
+  .agenda-row { display: grid; grid-template-columns: 60px 1fr; gap: 20px; padding: 30px 0; border-bottom: 1px solid rgba(173, 141, 90, 0.5); align-items: start; }
+  .agenda-row:first-child { border-top: 1px solid rgba(173, 141, 90, 0.5); }
+  .a-num { font-family: 'Cinzel', serif; font-size: 45px; font-weight: 700; color: var(--gold); line-height: 1; padding-top: 5px; }
+  .a-body { display: flex; flex-direction: column; gap: 8px; }
+  .a-title { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 600; color: #fff; line-height: 1.2; }
+  .a-desc { font-size: 16px; color: var(--text-muted); line-height: 1.4; }
+  .a-note { margin-top: 30px; font-size: 15px; color: rgba(255,255,255,0.4); font-style: italic; text-align: center; }
+
+  .booths-callout { margin-top: 60px; border: 1px solid var(--gold); padding: 50px 30px; background: linear-gradient(185.91deg, #0A1F3C 4.91%, #0B131F 95.56%); border-radius: 30px; text-align: center; }
+  .booths-intro { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 600; color: var(--gold); line-height: 1.4; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; }
+  .booths-grid { display: grid; grid-template-columns: 1fr; gap: 40px; text-align: left; }
+  .booth { padding-left: 20px; border-left: 1px solid rgba(255,255,255,0.2); }
+  .booth-title { font-size: 18px; font-weight: 600; color: var(--gold); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.8px; }
+  .booth-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  /* ── REGISTER ── */
+  .register-section { padding: 80px 20px; background: var(--blue); border-top: 1px solid rgba(255,255,255,0.05); }
+  .register-wrap { max-width: 800px; margin: 0 auto; }
+  .reg-card { background: transparent; padding: 0; }
+  .reg-card h2 { font-family: 'Cinzel', serif; font-size: 40px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); text-align: center; margin-bottom: 10px; }
+  .reg-sub { font-size: 18px; color: var(--text-muted); text-align: center; margin-bottom: 40px; }
+  .reg-fields { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; padding: 40px; display: grid; grid-template-columns: 1fr; gap: 24px; }
+  .reg-field { display: flex; flex-direction: column; }
+  .reg-field label { font-size: 11px; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1.1px; }
+  .reg-field input { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 16px; font-size: 16px; font-family: inherit; border-radius: 2px; outline: none; transition: border-color .2s; }
+  .reg-field input::placeholder { color: rgba(255,255,255,0.3); }
+  .reg-field input:focus { border-color: var(--gold); }
+  .reg-submit-wrap { text-align: center; margin-top: 10px; }
+  .reg-submit { padding: 16px 40px; background: var(--gold-grad-btn); color: #001E38; font-weight: 700; font-size: 15px; letter-spacing: 1px; text-transform: uppercase; border: 1px solid var(--gold); cursor: pointer; border-radius: 15px; transition: transform .2s; font-family: 'Montserrat', sans-serif; display: inline-flex; align-items: center; justify-content: center; gap: 10px; }
+  .reg-submit:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(213,187,141,0.3); }
+  .reg-secure { font-size: 12px; color: rgba(255,255,255,0.4); text-align: center; margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 6px; }
+
+  /* ── FOOTER ── */
+  footer { background: var(--blue); padding: 40px 20px 60px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .foot-tag { font-family: 'Playfair Display', serif; font-style: italic; font-size: 18px; color: var(--text-muted); margin-bottom: 40px; }
+  .foot-bot { width: 100%; max-width: 1250px; display: flex; flex-direction: column; gap: 20px; align-items: center; font-size: 13px; color: rgba(255,255,255,0.4); letter-spacing: 0.65px; }
+  .foot-bot .links { display: flex; gap: 30px; }
+  .foot-bot a:hover { color: var(--gold); }
+
+  /* ── DESKTOP ADJUSTMENTS ── */
+  @media(min-width: 960px) {
+    nav { padding: 20px 40px; }
+    nav ul { display: flex; gap: 40px; }
+    .nav-cta { display: inline-flex; }
+    .nav-toggle { display: none; }
+
+    .hero { padding: 180px 40px 100px; }
+    .hero-grid { grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; }
+    .hero-above { align-items: flex-start; text-align: left; }
+
+    .info-strip-wrapper { padding: 60px 40px 100px; }
+    .info-strip { grid-template-columns: repeat(3, 1fr); gap: 40px; padding: 60px 40px; }
+    .info-cell:not(:last-child)::after { content: ''; position: absolute; right: -20px; top: 10%; height: 80%; width: 1px; background: rgba(173, 141, 90, 0.5); }
+
+    .agenda-section { padding: 60px 40px 100px; }
+    .agenda-wrap { grid-template-columns: 350px 1fr; align-items: start; gap: 60px; }
+    .panel-title { position: sticky; top: 120px; text-align: left; }
+    .booths-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .register-section { padding: 100px 40px; }
+    .reg-fields { grid-template-columns: 1fr 1fr; gap: 30px; padding: 60px; }
+    .reg-field.full { grid-column: span 2; }
+    
+    .foot-bot { flex-direction: row; justify-content: space-between; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="#">
+    <img src="bs_logo.png" alt="BlueStone" class="brand-logo"/>
+  </a>
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#agenda">Agenda</a></li>
+    <li><a href="#register">Register</a></li>
+  </ul>
+  <a href="#register" class="nav-cta">Register Now</a>
+  <button class="nav-toggle" aria-label="Open menu" id="nav-toggle">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#overview" onclick="closeMobileMenu()">Overview</a>
+  <a href="#agenda" onclick="closeMobileMenu()">Agenda</a>
+  <a href="#register" onclick="closeMobileMenu()">Register</a>
+</div>
+
+<!-- HERO -->
+<header class="hero" id="overview">
+  <div class="hero-grid">
+    <div class="hero-above">
+      <h1 class="hero-title">INVESTOR DAY <span class="year">2026</span></h1>
+      <div class="hero-tag">Crafting Value. Shaping Tomorrow.</div>
+      <p class="hero-lede">Join us as we share BlueStone's journey of profitable growth, strategic priorities and long-term vision to create enduring value.</p>
+      <div>
+        <a href="#register" class="hero-cta">
+          Register Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <div class="invitation-only">By Invitation Only</div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="hero_logo.png" alt="BlueStone logo graphic"/>
+    </div>
+  </div>
+</header>
+
+<!-- INFO STRIP -->
+<section class="info-strip-wrapper">
+  <div class="info-strip">
+    <div class="info-cell">
+      <div class="info-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1.5"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+      </div>
+      <div class="info-label">Date</div>
+      <div class="info-value">3rd June, 2026</div>
+    </div>
+    <div class="info-cell">
+      <div class="info-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      </div>
+      <div class="info-label">Time</div>
+      <div class="info-value">3:00 PM — 9:00 PM IST</div>
+      <div class="info-sub">High Tea, Cocktails &amp; Dinner</div>
+    </div>
+    <div class="info-cell">
+      <div class="info-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s7-7.5 7-13a7 7 0 1 0-14 0c0 5.5 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      </div>
+      <div class="info-label">Venue</div>
+      <div class="info-value">MUMBAI</div>
+      <div class="info-sub">Venue details to be announced</div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section class="agenda-section" id="agenda">
+  <div class="agenda-wrap">
+    <h2 class="panel-title">Agenda</h2>
+    <div>
+      <div class="agenda-list">
+        <div class="agenda-row">
+          <div class="a-num">01</div>
+          <div class="a-body">
+            <div class="a-title">Welcome &amp; Market Context</div>
+            <div class="a-desc">Our journey and the Indian jewellery market</div>
+          </div>
+        </div>
+        <div class="agenda-row">
+          <div class="a-num">02</div>
+          <div class="a-body">
+            <div class="a-title">Strategic Pillars &amp; What Makes Us Unique</div>
+            <div class="a-desc">Merchandising &middot; Manufacturing &middot; Technology &middot; Marketing &middot; Retail Operations &middot; Financial Strength</div>
+          </div>
+        </div>
+        <div class="agenda-row">
+          <div class="a-num">03</div>
+          <div class="a-body">
+            <div class="a-title">Future Roadmap</div>
+            <div class="a-desc">Our Vision — FY30 and FY34</div>
+          </div>
+        </div>
+        <div class="agenda-row">
+          <div class="a-num">04</div>
+          <div class="a-body">
+            <div class="a-title">Q&amp;A Session</div>
+            <div class="a-desc">Open floor for queries</div>
+          </div>
+        </div>
+        <div class="agenda-row">
+          <div class="a-num">05</div>
+          <div class="a-body">
+            <div class="a-title">Networking</div>
+            <div class="a-desc">Cocktails and dinner with the management team</div>
+          </div>
+        </div>
+      </div>
+      <div class="a-note">Agenda is subject to change and is at the discretion of management.</div>
+    </div>
+  </div>
+  
+  <div class="agenda-wrap" style="grid-template-columns: 1fr; margin-top: 0;">
+    <div class="booths-callout">
+      <div class="booths-intro">Between formal sessions, you are invited to explore specially curated booths designed to bring the BlueStone ecosystem to life.</div>
+      <div class="booths-grid">
+        <div class="booth">
+          <div class="booth-title">The Concept Store</div>
+          <div class="booth-desc">A full physical replica of our retail environment. Experience our service design and customer journey firsthand.</div>
+        </div>
+        <div class="booth">
+          <div class="booth-title">Product Showcase</div>
+          <div class="booth-desc">Curated showcase of our latest products, highlighting manufacturing precision and design innovation.</div>
+        </div>
+        <div class="booth">
+          <div class="booth-title">The Tech Lab</div>
+          <div class="booth-desc">Live demonstrations of the proprietary technology powering our digital-first approach.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section class="register-section" id="register">
+  <div class="register-wrap">
+    <form class="reg-card" name="investor_registration" data-netlify="true" id="registration-form">
+      <input type="hidden" name="form-name" value="investor_registration" />
+      <h2>Reserve Your Spot</h2>
+      <div class="reg-sub">Please fill in your details to confirm your attendance.</div>
+      
+      <div class="reg-fields">
+        <div class="reg-field">
+          <label for="reg-name">Full Name *</label>
+          <input type="text" id="reg-name" name="full_name" required placeholder="Enter your full name"/>
+        </div>
+        <div class="reg-field">
+          <label for="reg-email">Email Address *</label>
+          <input type="email" id="reg-email" name="email" required placeholder="Enter your email address"/>
+        </div>
+        <div class="reg-field">
+          <label for="reg-company">Company / Organization *</label>
+          <input type="text" id="reg-company" name="company" required placeholder="Enter company name"/>
+        </div>
+        <div class="reg-field">
+          <label for="reg-designation">Designation</label>
+          <input type="text" id="reg-designation" name="designation" placeholder="Enter your designation"/>
+        </div>
+        <div class="reg-field full">
+          <label for="reg-phone">Phone Number *</label>
+          <input type="tel" id="reg-phone" name="phone" required placeholder="10-digit mobile number" maxlength="10" pattern="[0-9]{10}"/>
+        </div>
+        <div class="reg-field full reg-submit-wrap">
+          <button type="submit" class="reg-submit">
+            Submit Registration
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+      
+      <div class="reg-secure">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
+        Your information is secure and will only be used for event communication.
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-tag">Crafting Value. Shaping Tomorrow.</div>
+  
+  <div class="foot-bot">
+    <div>&copy; 2026 BlueStone. All rights reserved.</div>
+    <div class="links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const menu   = document.getElementById('mobile-menu');
+  toggle.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  function closeMobileMenu() {
+    menu.classList.remove('open');
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-label', 'Open menu');
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if(id.length > 1){
+        const el = document.querySelector(id);
+        if(el){ e.preventDefault(); window.scrollTo({top: el.offsetTop - 80, behavior: 'smooth'}); }
+      }
+    });
+  });
+
+  const regForm = document.getElementById('registration-form');
+  if (regForm) {
+    regForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const submitBtn = regForm.querySelector('.reg-submit');
+      const formData = new FormData(regForm);
+      
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(() => {
+        submitBtn.innerHTML = 'Registration received ✓';
+        submitBtn.style.background = '#0a203a';
+        submitBtn.style.color = '#fff';
+        submitBtn.style.borderColor = '#0a203a';
+        regForm.reset();
+      })
+      .catch((error) => {
+        console.error('Form submission error:', error);
+        alert('There was an error submitting the form. Please try again.');
+      });
+    });
+  }
+</script>
+</body>
+</html>
