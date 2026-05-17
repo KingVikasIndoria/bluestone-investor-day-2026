@@ -274,6 +274,17 @@
     
     .foot-bot { flex-direction: row; justify-content: space-between; }
   }
+
+  /* Modal */
+  .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); z-index: 1000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+  .modal-overlay.active { opacity: 1; visibility: visible; }
+  .modal { background: var(--blue); border: 1px solid var(--gold); border-radius: 15px; padding: 40px; text-align: center; max-width: 400px; width: 90%; transform: translateY(20px); transition: transform 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+  .modal-overlay.active .modal { transform: translateY(0); }
+  .modal-icon { width: 60px; height: 60px; border-radius: 50%; background: var(--gold-grad); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--blue); }
+  .modal h3 { font-family: 'Cinzel', serif; font-size: 24px; color: var(--gold); margin-bottom: 15px; }
+  .modal p { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 25px; }
+  .modal-btn { background: transparent; color: var(--gold); border: 1px solid var(--gold); padding: 10px 30px; border-radius: 8px; cursor: pointer; text-transform: uppercase; font-size: 13px; font-weight: 600; font-family: 'Montserrat', sans-serif; transition: all 0.2s; }
+  .modal-btn:hover { background: var(--gold); color: var(--blue); }
 </style>
 </head>
 <body>
@@ -460,6 +471,17 @@
   </div>
 </section>
 
+<div class="modal-overlay" id="success-modal">
+  <div class="modal">
+    <div class="modal-icon">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+    </div>
+    <h3>Registration Successful</h3>
+    <p>Thank you for registering. Our team will confirm your participation via email/call.</p>
+    <button class="modal-btn" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
 <footer>
   <div class="foot-tag">Crafting Value. Shaping Tomorrow.</div>
   
@@ -508,10 +530,7 @@
         body: new URLSearchParams(formData).toString()
       })
       .then(() => {
-        submitBtn.innerHTML = 'Registration received ✓';
-        submitBtn.style.background = '#0a203a';
-        submitBtn.style.color = '#fff';
-        submitBtn.style.borderColor = '#0a203a';
+        document.getElementById('success-modal').classList.add('active');
         regForm.reset();
       })
       .catch((error) => {
@@ -519,6 +538,10 @@
         alert('There was an error submitting the form. Please try again.');
       });
     });
+  }
+
+  function closeModal() {
+    document.getElementById('success-modal').classList.remove('active');
   }
 </script>
 </body>
