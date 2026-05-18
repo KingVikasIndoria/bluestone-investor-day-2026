@@ -523,6 +523,12 @@
       event.preventDefault();
       const submitBtn = regForm.querySelector('.reg-submit');
       const formData = new FormData(regForm);
+      const email = formData.get('email');
+      
+      if (localStorage.getItem('registered_email') === email) {
+        alert("You have already registered for the event with this email address. Our team will contact you soon.");
+        return;
+      }
       
       fetch("/", {
         method: "POST",
@@ -530,6 +536,7 @@
         body: new URLSearchParams(formData).toString()
       })
       .then(() => {
+        localStorage.setItem('registered_email', email);
         document.getElementById('success-modal').classList.add('active');
         regForm.reset();
       })
